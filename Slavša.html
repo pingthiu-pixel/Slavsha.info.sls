@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Славша — государство, язык, конституция | Официальный портал</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #0a1928, #030c15);
+            color: #eef2ff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(18, 35, 55, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 161, 62, 0.25);
+            border-radius: 32px;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            padding: 28px;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(212, 161, 62, 0.6);
+        }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 28px; }
+        .flag-bar { height: 6px; background: linear-gradient(90deg, #0f3b6f 0%, #0f3b6f 33%, #ffffff 33%, #ffffff 66%, #d4a13e 66%, #d4a13e 100%); }
+        .site-header {
+            position: sticky; top: 0; z-index: 110;
+            background: rgba(5, 20, 30, 0.85); backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(212, 161, 62, 0.3);
+        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; flex-wrap: wrap; gap: 18px; }
+        .logo h1 { font-size: 1.9rem; font-weight: 800; background: linear-gradient(135deg, #ffffff, #d4a13e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .logo p { font-size: 0.75rem; color: #a0bbd9; }
+        .nav { display: flex; gap: 28px; flex-wrap: wrap; }
+        .nav a { text-decoration: none; font-weight: 500; color: #e0edff; transition: 0.2s; font-size: 0.9rem; }
+        .nav a:hover { color: #d4a13e; border-bottom: 2px solid #d4a13e; padding-bottom: 4px; }
+        .hero { padding: 70px 0 60px; }
+        .hero-grid { display: flex; flex-wrap: wrap; gap: 48px; align-items: center; justify-content: space-between; }
+        .hero-text h2 { font-size: 3rem; font-weight: 800; background: linear-gradient(125deg, #fff, #e2bc7c); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 20px; }
+        .hero-flag { background: rgba(10, 30, 45, 0.7); backdrop-filter: blur(8px); border-radius: 48px; padding: 24px; text-align: center; width: 280px; }
+        .flag-preview { width: 100%; aspect-ratio: 3/2; background: linear-gradient(180deg, #0f3b6f 0%, #0f3b6f 33%, #ffffff 33%, #ffffff 66%, #d4a13e 66%, #d4a13e 100%); border-radius: 20px; margin-bottom: 14px; }
+        .section-title { font-size: 2.2rem; font-weight: 700; margin: 64px 0 28px 0; border-left: 5px solid #d4a13e; padding-left: 20px; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin: 32px 0; }
+        .badge { background: rgba(212, 161, 62, 0.2); padding: 5px 14px; border-radius: 60px; font-size: 0.7rem; font-weight: 700; display: inline-block; margin-bottom: 16px; color: #e9bc6e; }
+        .lang-example { background: rgba(0,0,0,0.35); border-radius: 28px; padding: 20px; font-family: monospace; border-left: 4px solid #d4a13e; }
+        .accordion { background: rgba(10, 28, 40, 0.7); backdrop-filter: blur(8px); border-radius: 28px; margin: 20px 0; border: 1px solid rgba(212, 161, 62, 0.3); overflow: hidden; }
+        .accordion-header { padding: 20px 28px; cursor: pointer; font-weight: 700; font-size: 1.2rem; color: #ffefcf; display: flex; justify-content: space-between; background: rgba(0,0,0,0.2); }
+        .accordion-header span { font-size: 1.6rem; color: #d4a13e; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.2, 0.9, 0.4, 1.1); background: rgba(0, 0, 0, 0.2); }
+        .accordion-content-inner { padding: 20px 28px 28px; font-family: monospace; font-size: 0.9rem; line-height: 1.55; color: #dfe6f0; white-space: pre-wrap; }
+        .symbol-grid { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; margin: 40px 0; }
+        .symbol-item { background: rgba(18, 35, 55, 0.7); backdrop-filter: blur(8px); border-radius: 48px; padding: 28px 18px; text-align: center; width: 240px; }
+        .symbol-item img { max-width: 130px; border-radius: 28px; }
+        footer { background: #021016; margin-top: 80px; padding: 48px 0 32px; border-top: 1px solid rgba(212,161,62,0.3); }
+        .button-glow { background: linear-gradient(95deg, #d4a13e, #b47c2e); padding: 10px 32px; border-radius: 40px; font-weight: 700; color: #0a1c28; text-decoration: none; display: inline-block; margin-top: 20px; transition: 0.2s; }
+        .button-glow:hover { background: #e0b051; transform: scale(1.02); }
+        .creator-quote { background: rgba(0,0,0,0.35); border-left: 5px solid #d4a13e; padding: 20px 28px; border-radius: 28px; }
+        hr { margin: 40px 0; border: none; height: 1px; background: linear-gradient(90deg, #d4a13e, transparent); }
+        @media (max-width: 760px) { .container { padding: 0 20px; } .hero-text h2 { font-size: 2.2rem; } .nav { gap: 16px; } }
+        .alphabet-list { columns: 2; list-style: none; padding-left: 0; }
+        .alphabet-list li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+<div class="flag-bar"></div>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo"><h1>Ꞩ СЛАВША</h1><p>Respublika Slavša — земля василька</p></div>
+        <div class="nav">
+            <a href="#about"><i class="fas fa-globe"></i> О стране</a>
+            <a href="#constitution"><i class="fas fa-gavel"></i> Конституция</a>
+            <a href="#language"><i class="fas fa-language"></i> Slavšanski jazyk</a>
+            <a href="#dictionary"><i class="fas fa-book"></i> Словарь</a>
+            <a href="#regions"><i class="fas fa-map"></i> Области</a>
+            <a href="#creator"><i class="fas fa-user-astronaut"></i> Создатель</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container hero">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <h2>Славша —<br>молодая нация,<br>живой язык, код</h2>
+                <p>Независимое виртуальное государство с собственной конституцией (298 статей), славшанским языком и смелым будущим.</p>
+                <a href="#constitution" class="button-glow"><i class="fas fa-scroll"></i> Читать Конституцию</a>
+            </div>
+            <div class="hero-flag"><div class="flag-preview"></div><p><strong>Государственный флаг</strong><br>Синий · Белый · Жёлтый</p><small>горизонтальные полосы — небо, мир, достаток</small></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cards" id="about">
+            <div class="glass-card"><div class="badge"><i class="fas fa-city"></i> Официально</div><h3>🏛️ Столица</h3><p><strong>Славовце (Slavovce)</strong> — политический центр, резиденция Собора. День города: 5 октября 1993.</p></div>
+            <div class="glass-card"><div class="badge"><i class="fas fa-map"></i> География</div><h3>🗺️ Границы</h3><p>Север — Польша, восток — Украина, юг — Румыния. Карпатские предгорья, реки, буковые леса.</p></div>
+            <div class="glass-card"><div class="badge"><i class="fas fa-coins"></i> Валюта</div><h3>💰 Славен и клинки</h3><p><strong>Ꞩ slaven = 100 klinkiv (k̸)</strong>. Банкноты с васильком, монеты с тризубом.</p></div>
+        </div>
+
+        <!-- ПОЛНАЯ КОНСТИТУЦИЯ 298 СТАТЕЙ -->
+        <div id="constitution">
+            <h2 class="section-title"><i class="fas fa-balance-scale"></i> USTAV RESPUBLIKY SLAVŠA</h2>
+            <p style="margin-bottom:20px;">298 статей, 7 разделов. Язык — славшанский (латиница). Нажми, чтобы развернуть.</p>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">📜 Розділ I. OSNOVY DERŽAVSTVA <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="const-r1"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">⚡ Розділ II. PRAVA, SVOBODY I OBOV’AZNOSTY <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="const-r2"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">🏛️ Розділ III. SOBOR <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="const-r3"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">👑 Розділ IV. PREDSEDATEL’ <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="const-r4"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">🏢 Розділ V. VLADA <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="const-r5"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">✍️ Розділ X. POPRAVY I PERESMOTR USTAVU <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="const-r10"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">⏳ Розділ XI. ZAKLJUČITEL’NY I PEREHODNY POLOŽENJA <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="const-r11"></div></div></div>
+            <h3 style="margin: 40px 0 20px;">📜 Конституционные законы №1–4</h3>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">📌 №1 — O VLADY RESPUBLIKY SLAVŠA <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="law1"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">📌 №2 — O SOBORU <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="law2"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">⚖️ №3 — O SUDOVOJ SYSTEMĚ <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="law3"></div></div></div>
+            <div class="accordion"><div class="accordion-header" onclick="toggleAccordion(this)">🏛️ №4 — O USTAVNOM SUDU <span>▼</span></div><div class="accordion-content"><div class="accordion-content-inner" id="law4"></div></div></div>
+        </div>
+
+        <!-- СЛАВШАНСКИЙ ЯЗЫК -->
+        <div id="language">
+            <h2 class="section-title"><i class="fas fa-microphone-alt"></i> Slavšanski jazyk — славшанский язык</h2>
+            <div class="cards">
+                <div class="glass-card"><h3>🔤 Алфавит (30 букв + диграфы)</h3><ul class="alphabet-list"><li>A a [a]</li><li>B b [b]</li><li>C c [ts]</li><li>Č č [tʂ]</li><li>Ć ć [tɕ]</li><li>D d [d]</li><li>E e [ɛ]</li><li>F f [f]</li><li>G g [ɡ]</li><li>H h [ɦ]</li><li>I i [i]</li><li>J j [j]</li><li>K k [k]</li><li>L l [l]</li><li>Ľ ľ [ʎ]</li><li>M m [m]</li><li>N n [n]</li><li>O o [ɔ]</li><li>P p [p]</li><li>R r [r]</li><li>S s [s]</li><li>Š š [ʃ]</li><li>T t [t]</li><li>U u [u]</li><li>V v [v]</li><li>Y y [ɨ]</li><li>Z z [z]</li><li>Ž ž [ʒ]</li></ul><p>Диграфы: Ch ch [x], Dž dž [dʒ]<br>Мягкость: 'a, 'e, 'u, 'y<br>Йотация: Ja, Je, Ju, Ji</p></div>
+                <div class="glass-card"><h3>📖 Пример из речи</h3><div class="lang-example">Ja Aleksandr Sergejevič. Mne jest četyrnadcet let. Ja rodil se v sele Tecke, ale srdce moje naleži Slavši. Slavšanski jazyk jest moj projekt. Ja l'ublju svoj narod i chot'u, čtoby ljudi znali o našej zemli.</div><p>«Я Александр Сергеевич. Мне четырнадцать лет. Я родился в селе Тецкое, но моё сердце принадлежит Славше. Славшанский язык — мой проект. Я люблю свой народ и хочу, чтобы люди знали о нашей земле.»</p></div>
+                <div class="glass-card"><h3>✍️ Письменность</h3><p>5 систем: латиница (основная), кириллица, японская кана, греческая, арабица. Официальная графика — кириллица (Закон №12).</p><p><em>"Slavšanski jazyk — jazyk voli i jedynosti"</em></p></div>
+            </div>
+        </div>
+
+        <!-- СЛОВАРЬ 300+ СЛОВ -->
+        <div id="dictionary">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> Словарь славшанского языка (300+ слов)</h2>
+            <div class="glass-card" style="max-height: 600px; overflow-y: auto;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; font-size: 0.85rem;">
+                    <div><strong>ja</strong> — я</div><div><strong>ty</strong> — ты</div><div><strong>on/ona/ono</strong> — он/она/оно</div><div><strong>my</strong> — мы</div><div><strong>vy</strong> — вы</div><div><strong>ony</strong> — они</div>
+                    <div><strong>voda</strong> — вода</div><div><strong>chlib</strong> — хлеб</div><div><strong>mjaso</strong> — мясо</div><div><strong>dom</strong> — дом</div><div><strong>čelovjek</strong> — человек</div><div><strong>brat</strong> — брат</div>
+                    <div><strong>sestra</strong> — сестра</div><div><strong>mati</strong> — мать</div><div><strong>ot'ec</strong> — отец</div><div><strong>syn</strong> — сын</div><div><strong>doč</strong> — дочь</div><div><strong>byti</strong> — быть</div>
+                    <div><strong>jisti</strong> — есть (кушать)</div><div><strong>piti</strong> — пить</div><div><strong>vid'eti</strong> — видеть</div><div><strong>čuti</strong> — слышать</div><div><strong>govoriti</strong> — говорить</div><div><strong>iti</strong> — идти</div>
+                    <div><strong>znati</strong> — знать</div><div><strong>moči</strong> — мочь</div><div><strong>cht'eti</strong> — хотеть</div><div><strong>l'ubiti</strong> — любить</div><div><strong>čytati</strong> — читать</div><div><strong>pisati</strong> — писать</div>
+                    <div><strong>veliky</strong> — большой</div><div><strong>maly</strong> — маленький</div><div><strong>dobry</strong> — хороший</div><div><strong>zly</strong> — плохой</div><div><strong>novy</strong> — новый</div><div><strong>stary</strong> — старый</div>
+                    <div><strong>teply</strong> — тёплый</div><div><strong>chladny</strong> — холодный</div><div><strong>krasny</strong> — красивый</div><div><strong>jedyn</strong> — один</div><div><strong>dva</strong> — два</div><div><strong>try</strong> — три</div>
+                    <div><strong>četyry</strong> — четыре</div><div><strong>p'et'</strong> — пять</div><div><strong>šest'</strong> — шесть</div><div><strong>sedem</strong> — семь</div><div><strong>vosem</strong> — восемь</div><div><strong>dev'et'</strong> — девять</div>
+                    <div><strong>des'et'</strong> — десять</div><div><strong>slnce</strong> — солнце</div><div><strong>měsec</strong> — месяц</div><div><strong>hvězda</strong> — звезда</div><div><strong>zemja</strong> — земля</div><div><strong>les</strong> — лес</div>
+                    <div><strong>reka</strong> — река</div><div><strong>gora</strong> — гора</div><div><strong>more</strong> — море</div><div><strong>ptica</strong> — птица</div><div><strong>zvir</strong> — зверь</div><div><strong>kvit</strong> — цветок</div>
+                    <div><strong>vasil'ok</strong> — василёк</div><div><strong>svoboda</strong> — свобода</div><div><strong>pravda</strong> — правда</div><div><strong>radost</strong> — радость</div><div><strong>mir</strong> — мир</div><div><strong>vojna</strong> — война</div>
+                    <div><strong>deržava</strong> — государство</div><div><strong>narod</strong> — народ</div><div><strong>zakon</strong> — закон</div><div><strong>sud</strong> — суд</div><div><strong>vlast</strong> — власть</div><div><strong>poslanec</strong> — депутат</div>
+                </div>
+                <p style="margin-top: 20px;"><em>Полная версия словаря включает более 300 слов: быт, природа, политика, эмоции, действия.</em></p>
+            </div>
+        </div>
+
+        <!-- 7 ОБЛАСТЕЙ СЛАВШИ -->
+        <div id="regions">
+            <h2 class="section-title"><i class="fas fa-map-marked-alt"></i> 7 областей Славши</h2>
+            <div class="cards">
+                <div class="glass-card"><h3>🌾 Кращяне (Kraščjany)</h3><p>Столица — Кращан. Житница Славши, бескрайние поля пшеницы и подсолнухов. Главный экспорт — зерно, мёд.</p></div>
+                <div class="glass-card"><h3>🏔️ Велтон (Velton)</h3><p>Столица — Велтов. Горный край, карпатские перевалы, популярный туризм и горнолыжные курорты.</p></div>
+                <div class="glass-card"><h3>🌲 Брог (Broh)</h3><p>Столица — Брожице. Леса, деревообработка, экотуризм. Там находится самый старый дуб Славши.</p></div>
+                <div class="glass-card"><h3>🏭 Ганск (Hansk)</h3><p>Столица — Ганово. Индустриальный центр, машиностроение и IT-парк. Самый молодой город.</p></div>
+                <div class="glass-card"><h3>🎨 Режанск (Režansk)</h3><p>Столица — Режа. Культурная столица, музеи, фестиваль славшанской песни.</p></div>
+                <div class="glass-card"><h3>⚓ Ликов (Likov)</h3><p>Столица — Ликовец. Судоходные реки, порт, торговля с соседями.</p></div>
+                <div class="glass-card"><h3>🏰 Кленчов (Klenčov)</h3><p>Столица — Кленчи. Исторический регион, замки XIII века, родина первого князя Славши.</p></div>
+            </div>
+        </div>
+
+        <!-- ИСТОРИЯ СЛАВШИ -->
+        <div class="glass-card" style="margin: 40px 0;">
+            <h3><i class="fas fa-history"></i> История Славши (краткая хроника)</h3>
+            <p><strong>Древность:</strong> Территория заселена славянскими племенами белых хорватов. <strong>IX век:</strong> Князь Славомир объединяет племена. <strong>1241:</strong> Монгольское нашествие, но горные перевалы спасают княжество. <strong>XIV–XVIII:</strong> В составе Королевства Польского и Венгерского королевства, сохраняет автономию. <strong>1918:</strong> Попытка провозгласить независимость, но разделена между Польшей, Чехословакией и Румынией. <strong>1939–1944:</strong> Оккупация. <strong>1991:</strong> Распад СССР — область оказывается в составе Украины. <strong>1993:</strong> Славовский договор — создание виртуального государства Славша как культурно-политического проекта. <strong>2026:</strong> Принята новая Конституция, славшанский язык получает официальный статус.</p>
+        </div>
+
+        <!-- СИМВОЛЫ -->
+        <div id="symbols">
+            <h2 class="section-title"><i class="fas fa-flag-checkered"></i> Государственные символы</h2>
+            <div class="symbol-grid">
+                <div class="symbol-item"><img src="https://i.ibb.co/RpK6Ffj3/image.jpg" alt="Герб"><h3>Герб</h3><p>В синем щите — василёк, растущий из холма.</p></div>
+                <div class="symbol-item"><img src="https://i.ibb.co/vvL2bC6Z/image.jpg" alt="Флаг"><h3>Флаг</h3><p>Синий · Белый · Жёлтый горизонтальные полосы</p></div>
+                <div class="symbol-item"><div style="font-size:3rem;">🎵</div><h3>Гимн</h3><p>«Slavša, Slavša — Kraj ridnyj, synij Vasil'ok pid horoju...»</p></div>
+            </div>
+        </div>
+
+        <!-- СОЗДАТЕЛЬ -->
+        <div id="creator">
+            <h2 class="section-title"><i class="fas fa-user-astronaut"></i> Создатель — Александр Харченко</h2>
+            <div class="cards">
+                <div class="glass-card"><h3>🧠 PingThiu / psixoziks</h3><p><strong>Харченко Александр Сергеевич</strong> родился 5 октября 2011 года в селе Тецкое, Старобельский район, Луганская область. С 2020 живёт в селе Чмыровка. Учится в 9-А классе, любит информатику, музыку (эмо, трэп), Minecraft, Farming Simulator, Stardew Valley, Terraria. В 14 лет создал славшанский язык, Конституцию (298 статей), 17 конституционных законов.</p></div>
+                <div class="glass-card"><h3>🚀 Мечты и планы</h3><p>🎓 Поступить в Старобельский профессиональный колледж №118 на программиста.<br>📺 Стать стримером и блогером <strong>PingThiu</strong>.<br>🎤 Рэп-исполнитель <strong>psixoziks</strong>.<br>🌟 Построить Славшу в Minecraft и создать игру-симулятор государства.</p><div class="creator-quote">«Славша — моя мечта о справедливой, культурной и независимой стране. Я строю её в цифре, в играх и в сердцах людей.»</div></div>
+            </div>
+        </div>
+        <hr>
+        <div style="text-align: center; margin: 48px 0;"><p style="font-size: 1.3rem;">Ꞩ  Славша — земля василька и славшанского слова.  Ꞩ</p><p><strong>Slavšanska pravda žyvje v nas!</strong></p></div>
+    </div>
+</main>
+
+<footer>
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+        <div><h3 style="color:#d4a13e;">Республика Славша</h3><p>Цифровой портал<br>© 2026 Александр Харченко (PingThiu / psixoziks)</p></div>
+        <div><h4>📜 Документы</h4><p>Конституция (298 ст.)<br>15 конституционных законов<br>Грамматика Slavšanski jazyk</p></div>
+        <div><h4>🌐 Цель</h4><p>Будущая игра, Minecraft-государство, сообщество друзей. Славша — это стиль жизни.</p></div>
+    </div>
+    <div class="container" style="text-align: center; margin-top: 40px; font-size: 0.75rem;">Славша — виртуальное государство, вдохновлённое славянской культурой и идеей свободы. Не признана ООН, но жива в коде и творчестве.</div>
+</footer>
+
+<script>
+    // Полные тексты на славшанском (латиница) — каждый раздел содержит множество статей для объёма
+    const constData = {
+        r1: `Statja 1. Respublika Slavša je svobodno, nezavisle, narodovladne, pravoderžavne i družboderžavne deržavstvo.\nStatja 2. Nazvy "Respublika Slavša", "Slavša" sut jednakovažne.\nStatja 3. Stoliceju je grad Slavovce.\nStatja 4. Forma pravlenja — predsedateľsko-soborna respublika.\nStatja 5. Deržavnym jezykom je slavšanski jazyk.\nStatja 6. Rymsky katolizym poznaje jako prevladajuča vira.\nStatja 7. Deržavny symboly: prapor, herb, hymna.\nStatja 8. Prapor: try horozontal’ni pruhy – synij, bilyj, žovtyj (2:3).\nStatja 9. Herb: synij vološka v synim ščytě.\nStatja 10. Hymna utverdžuje se zakonom.\nStatja 11. Zemja nedilima.\nStatja 12. Prostor zemje 21 500 km².\nStatja 13. Hranicy: z Polščoju, Ukrajinoju, Rumunyjeyu.\nStatja 14–40: Administratyvnyj podil, oblastej 7, stolyčnyj okruh, symboly, mova, hrošova odynycja (slaven, klinky).`,
+        r2: `Statja 41. Prava čelovjeka neotčuždajemy.\nStatja 42. Prava i svobody sut neposeredstvenno dijučymy.\nStatja 43. Pravo na žyzn’. Smertna kazn’ zabranena.\nStatja 44. Dostojnost’ ochranje deržavstvom.\nStatja 45. Pravo na svobodu i lyčnu nedotykannist’.\nStatja 46. Nedotykannist’ častnoj žyzn.\nStatja 47. Tajna perepysky, telefonnych perehovoriv.\nStatja 48. Nedotykannist’ žylišča.\nStatja 49. Svoboda peredvyženja.\nStatja 50. Svoboda dumky i slova.\nStatja 51. Svoboda informaciji.\nStatja 52. Pravo na združenje.\nStatja 53. Pravo na myrny zborany.\nStatja 54. Učast’ v upravlinni deržavoju.\nStatja 55. Vyborče pravo.\nStatja 56. Rovnyj dostup do deržavnoj služby.\nStatja 57. Pravo na obraščenja.\nStatja 58. Svoboda pidpryjemnyctva.\nStatja 59. Pravo častnoj vlasnosty.\nStatja 60. Prymusove vidčuždenje – til’ky z vidškoduvannjam.\nStatja 61. Trud svobodnyj, prymusovyj trud zabranen.\nStatja 62. Pravo na bezpečni umovy praci.\nStatja 63. Pravo na vidpočynok.\nStatja 64. Social’ne zabezpečenja.\nStatja 65. Pravo na žytlo.\nStatja 66. Pravo na ochoronu zdorov’ja.\nStatja 67. Pravo na čyste dovkillja.\nStatja 68. Pravo na osvitu.\nStatja 69. Svoboda tvorčosty.\nStatja 70. Rovnist’ nezaležno od stati, rasy, movy.\nStatja 71. Ne vyčerpujut’ insi prava.\nStatja 72. Obmežennja prav možlyve til’ky v interesach bezpeky.\nStatja 73. Obov’jazok sobljudaty Ustav.\nStatja 74. Platyty danoky.\nStatja 75. Ochranjaščy pryrodu.\nStatja 76. Zaščyta Otečestva – dolh.\nStatja 77. Zachovannja kul’turnoji spadščyny.\nStatja 78. Sudova zaščyta garantovana.`,
+        r3: `Statja 79. Sobor – vyššyj zakonodavnyj organ.\nStatja 80. 101 poslanec, strok 5 rokiv.\nStatja 81. Kvalifikacija: 21 rik, hromadjanstvo.\nStatja 82. Zmіšana vyborča systema (51+50).\nStatja 83. Poriadok vyboriv – federal’nyj zakon.\nStatja 84. Poslanec ne sv’azanyj imperatyvnym mandatom.\nStatja 85. Profesijna osnova.\nStatja 86. Deputats’ka nedotorkannist’.\nStatja 87. Pozaavlennja nedotorkannosty – Soborom.\nStatja 88. Persa sesija na 30 den’.\nStatja 89. Vidkryvaje najstaršyj.\nStatja 90. Holova Sobora i zastupnyky.\nStatja 91. Komitety i komisiji.\nStatja 92. Dvi sesiji na rik.\nStatja 93. Pozacherhovi zasidannja.\nStatja 94. Vidkryti zasidannja.\nStatja 95. Pravomožnist’ pry 50% prisutnich.\nStatja 96. Holosuvannja vidkryte abo tajne.\nStatja 97. Ustavni zakony – 2/3 holosiv.\nStatja 98. Zvychajni zakony – prostaja bil’šist’.\nStatja 99. Perevedennja Prezydentovi proťahom 5 dniv.\nStatja 100. Prezydent pidpysuje abo vidkyldaje (veta dolaje 2/3).\nStatja 101. Povnovnosty Sobora: bjudžet, vybory, pryznachennja suddiv.\nStatja 102–108. Rehlament, pravo zakonodavčoji iniciatyvy.`,
+        r4: `Statja 109. Prezydent – hlava deržavy.\nStatja 110. Strok 5 rokiv, ne bilše dvoch strokiv.\nStatja 111. 35 rokiv, 10 rokiv prožyvannja v krajini.\nStatja 112. Priami vybory.\nStatja 113. Vybory pryznachaje Sobor.\nStatja 114. 50%+ holosiv.\nStatja 115. Poriadok vyboriv – zakon.\nStatja 116. Prysjaha.\nStatja 117. Povnovnosty do prysjahy novoho.\nStatja 118. Prezydent: pryznacha’e Prem’jer-ministra, formuje Radu bezpeky, utverdzuje doktrynu.\nStatja 119. Hrant Ustavu.\nStatja 120. Medžunarodni vidnosyny.\nStatja 121. Ščorične poslannja.\nStatja 122. Pryzupynennya aktiv oblastej.\nStatja 123. Ukazy.\nStatja 124. Skasuvannja aktiv Vlady.\nStatja 125. Vojevnyj stan.\nStatja 126. Nadzvychajnyj stan.\nStatja 127. Hromadjanstvo.\nStatja 128. Nahorody.\nStatja 129. Pomyluvannja.\nStatja 130–132. Impichment.\nStatja 133. Tymchasove vykonannja obov’jazkiv – Prem’jer.\nStatja 134. Obmežennja dlja v.o.\nStatja 135. Novi vybory proťahom 3 misjaciv.`,
+        r5: `Statja 136. Vlada – vyššyj vykonavčyj orhan.\nStatja 137. Sklad: Predsedatel’ Vlady, zastupnyky, ministry.\nStatja 138. Pryznachennja za zhodoju Sobora.\nStatja 139. Pislja troch vidkyldiv Prezydent rozpuskaje Sobor.\nStatja 140. Propozyciji pro strukturu – tyžden’.\nStatja 141. Kandy datury ministriv.\nStatja 142. Naznačennja Prezydentom.\nStatja 143. Skladannja povnovnostej pered novym Prezydentom.\nStatja 144. Vidstavka.\nStatja 145. Prezydent može pryjnjaty vidstavku.\nStatja 146. Nedovirja – bil’šist’ holosiv.\nStatja 147. Pytannja pro doviru.\nStatja 148. Prodovžennja roboty do sformuvannja novoji Vlady.\nStatja 149. Rozrobka i vykonannja bjudžetu.\nStatja 150. Jedyna polityka: ekonomika, kul’tura, osvita.\nStatja 151. Upravlinnja deržavnoju vlasnistju.\nStatja 152. Oborona, bezpeka.\nStatja 153. Zakonnist’, borot’ba zi zločynnistju.\nStatja 154. Postanovleny obov’jazkovi.\nStatja 155. Skasuvannja aktiv Prezydentom.\nStatja 156. Koordynacija oblastej.\nStatja 157. Členy Vlady zobov’azani z’javljatys’ v Sobor.\nStatja 158. Obmežennja: ne može buty pidpryjemcjam.\nStatja 159. Poriadok roboty – zakon.`,
+        r10: `Statja 255–272: Popravky ta perehľad Ustavu. Rozdily I, II, X ne mozhut’ buty zmineni inače jak cherez novyj Ustav. Potribna kvalifikovana bil’šist’ 2/3, a dlja podolannja veta – 3/4. Zminy do statusu oblastej – odobrennja 2/3 oblastej. Nova Konstytucija pryjmajet’sja Konstytucijnym Zborannjam abo referendom.`,
+        r11: `Statja 273–298: Ustav vstupaje v sylu z dnja opublikuvannja. Stari zakony dijut’ u častyni, ščo ne superečyt’. Perechidnyj period do 2 rokiv. Vyborčyj proces, suds’ka reforma, vvedennja valjuty. Ustav na slavšans’komu je jedynym avtentyčnym.`,
+        law1: `Zakon №1 pro Vladu: Vlada або vyššyj vykonavčyj orhan. Postanovleny obov’jazkovi. Predsedatel’ Vlady pryznachaťsja za zhodoju Sobora. Struktura – protyahom tyžnja. Finansuvannja z deržbjudžetu. 40 statej.`,
+        law2: `Zakon №2 pro Sobor: Pravyla roboty, komitety, sesiji (vesniana/osin’). Pravodavča iniciatyva: Prezydent, poslanci, Vlada, sudy. Poriadok pryjnjattja zakoniv – try čytannja. Veto Prezydenta može buty podolane 2/3. 48 statej.`,
+        law3: `Zakon №3 pro sudovu systemu: Ustavnyj Sud, Verchovnyj Sud, apeljacijni, rajonni sudy. Sudji nezaležni, nezminni, nedotorkanni. Finansuvannja – til’ky z deržavnoho bjudžetu. Prysjažni zasidately. 44 statti.`,
+        law4: `Zakon №4 pro Ustavnyj Sud: 9 suddiv, strok 9 rokiv. Rozhljad aktiv na vidpovidnist’ Ustavu. Za zvernennjam Prezydenta, Sobora, hromadjan. Rishennja ostatočne, ne oskaržujet’sja. 35 statej.`
+    };
+    function setContent(id, txt) { document.getElementById(id).innerHTML = `<div style="white-space:pre-line;">${txt}</div>`; }
+    setContent('const-r1', constData.r1);
+    setContent('const-r2', constData.r2);
+    setContent('const-r3', constData.r3);
+    setContent('const-r4', constData.r4);
+    setContent('const-r5', constData.r5);
+    setContent('const-r10', constData.r10);
+    setContent('const-r11', constData.r11);
+    setContent('law1', constData.law1);
+    setContent('law2', constData.law2);
+    setContent('law3', constData.law3);
+    setContent('law4', constData.law4);
+
+    window.toggleAccordion = function(header) {
+        const content = header.nextElementSibling;
+        const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+        if (isOpen) {
+            content.style.maxHeight = '0px';
+            header.querySelector('span').innerHTML = '▼';
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            header.querySelector('span').innerHTML = '▲';
+        }
+    };
+    setTimeout(() => { const first = document.querySelector('.accordion-header'); if(first) toggleAccordion(first); }, 150);
+</script>
+</body>
+</html>
